@@ -1,0 +1,36 @@
+// 소스 코드를 컴파일하기 위한 기본 TypeScript 설정
+// 참고: https://www.typescriptlang.org/tsconfig
+// 참고: https://vitejs.dev/guide/features.html#typescript-compiler-options
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+
+    /// 마이그레이션 중이므로 자바스크립트를 허용
+    "allowJs": true,
+    "skipLibCheck": false,
+    "esModuleInterop": false,
+
+    /// default export가 없는 모듈을 import할 수 있게 함
+    /// https://gist.github.com/chrisgervang/59ed046c0a8d7c3a1be1b3416f8f2466
+    "allowSyntheticDefaultImports": true,
+
+    "strict": true,
+    "exactOptionalPropertyTypes": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+
+    /// vite가 사용하는 esbuild는 타입 정보 없이 컴파일하기 때문에
+    /// 타입에 의존하는 const enum 등을 사용할 수 없음
+    /// https://vitejs.dev/guide/features.html#isolatedmodules
+    "isolatedModules": true,
+    "noEmit": true,
+
+    /// https://www.typescriptlang.org/tsconfig#jsx
+    "jsx": "react-jsx"
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.vite.json" }]
+}

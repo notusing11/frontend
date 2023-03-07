@@ -1,0 +1,9 @@
+// vite가 실행되는 node 환경용 tsconfig
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "esnext",
+    "moduleResolution": "node"
+  },
+  "include": ["vite.config.ts", "./validateEnv.ts"]
+}
