@@ -1,0 +1,24 @@
+// 소스 코드를 컴파일하기 위한 기본 TypeScript 설정
+// 참고: https://www.typescriptlang.org/tsconfig
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    // 마이그레이션 중이므로 자바스크립트를 허용
+    "allowJs": true,
+    "skipLibCheck": false,
+    "esModuleInterop": false,
+    // https://gist.github.com/chrisgervang/59ed046c0a8d7c3a1be1b3416f8f2466
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.vite.json" }]
+}
